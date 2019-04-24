@@ -1,0 +1,6 @@
+##folder
+.idea
+out
+
+##file
+*.iml
