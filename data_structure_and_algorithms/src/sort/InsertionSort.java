@@ -1,6 +1,5 @@
 package sort;
 
-import static util.NumUtil.printArr;
 
 public class InsertionSort extends Sort{
     public InsertionSort(int[] arr){

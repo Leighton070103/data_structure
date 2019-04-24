@@ -1,33 +1,33 @@
 package sort;
 
-import java.util.Arrays;
+import util.ArrayUtil;
 
-import static util.NumUtil.*;
+import java.util.Arrays;
 
 public class SortTest {
 
     int[] sorted;
 
     SortTest(int[] arr) {
-        sorted = copyArray(arr);
+        sorted = ArrayUtil.copyArray(arr);
         Arrays.sort(sorted);
     }
 
     public static void main(String[] args) {
-        int[] arr = randomArr(900000);
+        int[] arr = ArrayUtil.randomArr(900000);
         System.out.println("Sorting test: [Array length: " + arr.length + "]");
 //        printArr(arr);
         SortTest sortTest = new SortTest(arr);
 
 
 
-        test("Merge sort", new MergeSort(copyArray(arr)), sortTest);
-        test("Improved Merge sort", new ImprovedMergeSort(copyArray(arr)), sortTest);
-        test("Quick sort", new QuickSort(copyArray(arr)), sortTest);
-        test("Improved Quick sort", new ImprovedQuickSort(copyArray(arr)), sortTest);
-        test("Heap sort", new HeapSort(copyArray(arr)), sortTest);
-        test("Non-recursive Synthetical Sort", new NonRecursiveSyntheticalSort(copyArray(arr)), sortTest);
-        test("Recursive Synthetical Sort", new RecursiveSyntheticalSort(copyArray(arr)), sortTest);
+        test("Merge sort", new MergeSort(ArrayUtil.copyArray(arr)), sortTest);
+        test("Improved Merge sort", new ImprovedMergeSort(ArrayUtil.copyArray(arr)), sortTest);
+        test("Quick sort", new QuickSort(ArrayUtil.copyArray(arr)), sortTest);
+        test("Improved Quick sort", new ImprovedQuickSort(ArrayUtil.copyArray(arr)), sortTest);
+        test("Heap sort", new HeapSort(ArrayUtil.copyArray(arr)), sortTest);
+        test("Non-recursive Synthetical Sort", new NonRecursiveSyntheticalSort(ArrayUtil.copyArray(arr)), sortTest);
+        test("Recursive Synthetical Sort", new RecursiveSyntheticalSort(ArrayUtil.copyArray(arr)), sortTest);
 //        test("Bucket Sort", new BucketSort(copyArray(arr), 100), sortTest);
 
 //        test("Shell sort", new ShellSort(copyArray(arr)), sortTest);

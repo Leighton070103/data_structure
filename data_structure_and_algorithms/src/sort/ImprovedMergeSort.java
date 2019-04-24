@@ -1,7 +1,6 @@
 package sort;
 
 
-import static util.NumUtil.printArr;
 
 public class ImprovedMergeSort extends Sort {
 

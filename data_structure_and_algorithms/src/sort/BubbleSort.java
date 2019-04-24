@@ -2,6 +2,9 @@ package sort;
 
 import static util.NumUtil.swap;
 
+/**
+ * 冒泡排序
+ */
 public class BubbleSort extends Sort {
 
     public BubbleSort(int[] arr){

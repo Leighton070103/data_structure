@@ -1,7 +1,7 @@
 package problem.recursivelist;
 
 import static problem.recursivelist.Node.recurse;
-import static util.NumUtil.orderedArr;
+import static util.ArrayUtil.orderedArr;
 import static util.PrintUtil.printArr;
 
 public class RecursiveList {

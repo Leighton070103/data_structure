@@ -1,6 +1,5 @@
 package sort;
 
-import static util.NumUtil.printArr;
 import static util.NumUtil.swap;
 
 public class SelectionSort extends Sort {
