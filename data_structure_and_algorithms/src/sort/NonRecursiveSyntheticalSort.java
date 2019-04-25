@@ -1,7 +1,6 @@
 package sort;
 
 import java.util.Stack;
-
 import static util.NumUtil.randomNum;
 import static util.NumUtil.swap;
 

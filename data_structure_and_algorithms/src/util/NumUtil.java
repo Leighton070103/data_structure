@@ -43,6 +43,12 @@ public class NumUtil {
         return randomNum(10000);
     }
 
+    /**
+     * TODO:看看random的用法
+     * @param min
+     * @param max
+     * @return
+     */
     public static int randomNum(int min, int max){
         Random random = new Random();
         return random.nextInt(max) % (max - min + 1) + min;
