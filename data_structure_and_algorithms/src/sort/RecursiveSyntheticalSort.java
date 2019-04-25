@@ -1,10 +1,11 @@
 package sort;
 
-import java.util.Stack;
-
 import static util.NumUtil.randomNum;
 import static util.NumUtil.swap;
 
+/**
+ * 递归版本的综合排序。
+ */
 public class RecursiveSyntheticalSort extends Sort {
     public RecursiveSyntheticalSort(int[] arr) {
         super(arr);
@@ -16,6 +17,12 @@ public class RecursiveSyntheticalSort extends Sort {
 
     }
 
+    /**
+     * 数组长度小于60时，采用插入排序。
+     * 数组长度大于60时，采用快排。
+     * @param left
+     * @param right
+     */
     void sort(int left, int right) {
         if (right - left < 60) {
             insertionSort(left, right);
@@ -27,9 +34,9 @@ public class RecursiveSyntheticalSort extends Sort {
         int nPtr = left;
 
         while (nPtr < rightPtr) {
-            if (arr[nPtr] > num) swap(arr, nPtr, -- rightPtr);
-            else if (arr[nPtr] < num) swap(arr, nPtr ++, ++ leftPtr);
-            else nPtr ++;
+            if (arr[nPtr] > num) swap(arr, nPtr, --rightPtr);
+            else if (arr[nPtr] < num) swap(arr, nPtr++, ++leftPtr);
+            else nPtr++;
         }
         sort(left, leftPtr);
         sort(rightPtr, right);
@@ -42,26 +49,5 @@ public class RecursiveSyntheticalSort extends Sort {
             while (mark > 0 && arr[mark - 1] > value) arr[mark] = arr[--mark]; //找到第一个比value大的数的位置。
             arr[mark] = value;
         }
-    }
-
-    private void cacheLeftRight(Stack<Integer> stack, int left, int right){
-        stack.push(left);
-        stack.push(right);
-    }
-
-    int[] partition(int left, int right) {
-        int num = arr[randomNum(left, right)];
-        int rightPtr = right + 1;
-        int leftPtr = left - 1;
-        int nPtr = left;
-
-        while (nPtr < rightPtr) {
-            if (arr[nPtr] > num) {
-                swap(arr, nPtr, -- rightPtr);
-            }
-            else if (arr[nPtr] < num) swap(arr, nPtr ++, ++ leftPtr);
-            else nPtr ++;
-        }
-        return new int[] {leftPtr, rightPtr};
     }
 }

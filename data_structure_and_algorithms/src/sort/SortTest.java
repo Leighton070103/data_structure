@@ -4,12 +4,14 @@ import util.ArrayUtil;
 
 import java.util.Arrays;
 
+import static util.ArrayUtil.copyArray;
+
 public class SortTest {
 
     int[] sorted;
 
     SortTest(int[] arr) {
-        sorted = ArrayUtil.copyArray(arr);
+        sorted = copyArray(arr);
         Arrays.sort(sorted);
     }
 
@@ -21,16 +23,16 @@ public class SortTest {
 
 
 
-        test("Merge sort", new MergeSort(ArrayUtil.copyArray(arr)), sortTest);
-        test("Improved Merge sort", new ImprovedMergeSort(ArrayUtil.copyArray(arr)), sortTest);
-        test("Quick sort", new QuickSort(ArrayUtil.copyArray(arr)), sortTest);
-        test("Improved Quick sort", new ImprovedQuickSort(ArrayUtil.copyArray(arr)), sortTest);
-        test("Heap sort", new HeapSort(ArrayUtil.copyArray(arr)), sortTest);
-        test("Non-recursive Synthetical Sort", new NonRecursiveSyntheticalSort(ArrayUtil.copyArray(arr)), sortTest);
-        test("Recursive Synthetical Sort", new RecursiveSyntheticalSort(ArrayUtil.copyArray(arr)), sortTest);
+//        test("Merge sort", new MergeSort(copyArray(arr)), sortTest);
+//        test("Improved Merge sort", new ImprovedMergeSort(copyArray(arr)), sortTest);
+//        test("Quick sort", new QuickSort(copyArray(arr)), sortTest);
+//        test("Improved Quick sort", new ImprovedQuickSort(copyArray(arr)), sortTest);
+//        test("Heap sort", new HeapSort(copyArray(arr)), sortTest);
+//        test("Non-recursive Synthetical Sort", new NonRecursiveSyntheticalSort(copyArray(arr)), sortTest);
+//        test("Recursive Synthetical Sort", new RecursiveSyntheticalSort(copyArray(arr)), sortTest);
 //        test("Bucket Sort", new BucketSort(copyArray(arr), 100), sortTest);
 
-//        test("Shell sort", new ShellSort(copyArray(arr)), sortTest);
+        test("Shell sort", new ShellSort(copyArray(arr)), sortTest);
 //        test("Improved Bubble sort", new ImprovedBubbleSort(copyArray(arr)), sortTest);
 //        test("Bubble sort", new BubbleSort(copyArray(arr)), sortTest);
 //        test("Selection sort", new SelectionSort(copyArray(arr)), sortTest);
