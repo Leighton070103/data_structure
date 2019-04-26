@@ -9,6 +9,9 @@ public class HeapSort extends Sort {
         super(arr);
     }
 
+    /**
+     * 第一个数此时为最大值，将其与最后一个数交换。
+     */
     @Override
     public void sort() {
         MaxHeap heap = new MaxHeap(arr);

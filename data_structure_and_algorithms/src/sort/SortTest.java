@@ -27,7 +27,7 @@ public class SortTest {
 //        test("Improved Merge sort", new ImprovedMergeSort(copyArray(arr)), sortTest);
 //        test("Quick sort", new QuickSort(copyArray(arr)), sortTest);
 //        test("Improved Quick sort", new ImprovedQuickSort(copyArray(arr)), sortTest);
-//        test("Heap sort", new HeapSort(copyArray(arr)), sortTest);
+        test("Heap sort", new HeapSort(copyArray(arr)), sortTest);
 //        test("Non-recursive Synthetical Sort", new NonRecursiveSyntheticalSort(copyArray(arr)), sortTest);
 //        test("Recursive Synthetical Sort", new RecursiveSyntheticalSort(copyArray(arr)), sortTest);
 //        test("Bucket Sort", new BucketSort(copyArray(arr), 100), sortTest);
