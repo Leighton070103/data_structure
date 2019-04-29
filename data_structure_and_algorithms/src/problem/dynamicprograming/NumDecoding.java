@@ -1,8 +1,8 @@
 package problem.dynamicprograming;
 
 /**
+ * LeetCode 91 —— 解码方法
  * 一条包含字母 A-Z 的消息通过以下方式进行了编码：
- *
  * 'A' -> 1
  * 'B' -> 2
  * ...
@@ -13,6 +13,7 @@ public class NumDecoding {
     public static void main(String[] args){
         NumDecoding numDecoding = new NumDecoding();
         System.out.println(numDecoding.numDecodings("226"));
+
     }
 
     /**
