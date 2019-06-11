@@ -6,6 +6,7 @@ import static util.NumUtil.swap;
 
 /**
  * 非递归版本的综合排序。
+ * 小于60，用插排，小样本的情况下，O(n^2)的劣势体现不出来，反而有常数项少的优势
  */
 public class NonRecursiveSyntheticalSort extends Sort {
     public NonRecursiveSyntheticalSort(int[] arr) {

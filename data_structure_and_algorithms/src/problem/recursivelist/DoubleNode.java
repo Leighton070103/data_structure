@@ -1,9 +1,5 @@
 package problem.recursivelist;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
-import java.util.zip.DeflaterOutputStream;
-
 import static util.PrintUtil.printNum;
 
 public class DoubleNode {

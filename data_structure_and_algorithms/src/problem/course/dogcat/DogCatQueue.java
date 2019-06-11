@@ -1,7 +1,6 @@
-package problem.dogcat;
+package problem.course.dogcat;
 
 import javafx.util.Pair;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.LinkedList;
 import java.util.Queue;

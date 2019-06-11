@@ -6,6 +6,9 @@ import static util.NumUtil.swap;
 
 /**
  * 堆排序
+ * 额外空间复杂度O(1)
+ * 自顶向上建堆O(n)；
+ * 自定向下构建堆为nlogn
  * 不稳定排序
  */
 public class HeapSort extends Sort {

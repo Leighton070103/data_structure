@@ -1,4 +1,6 @@
-package problem;
+package problem.course;
+
+import problem.Problem;
 
 import java.util.Arrays;
 

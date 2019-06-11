@@ -1,4 +1,4 @@
-package problem.dogcat;
+package problem.course.dogcat;
 
 public class Pet { private String type;
     public Pet(String type) { this.type = type; }

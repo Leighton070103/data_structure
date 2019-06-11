@@ -1,5 +1,6 @@
-package problem;
+package problem.course;
 
+import problem.Problem;
 import util.PrintUtil;
 import static util.NumUtil.swap;
 

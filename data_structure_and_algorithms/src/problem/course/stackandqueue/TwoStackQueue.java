@@ -1,4 +1,4 @@
-package problem;
+package problem.course.stackandqueue;
 
 import java.util.Stack;
 

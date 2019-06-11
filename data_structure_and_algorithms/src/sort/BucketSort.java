@@ -2,7 +2,8 @@ package sort;
 
 /**
  * 桶排序：将数组分到有限数量的桶里。
- * 最佳效率为O(n)
+ * 时间复杂度O(n)，空间复杂度O(n)
+ * 稳定的排序
  * 数据差距大时，空间利用率低，且效率低。
  */
 public class BucketSort extends Sort {
