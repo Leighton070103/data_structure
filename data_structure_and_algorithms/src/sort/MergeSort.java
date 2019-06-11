@@ -1,6 +1,7 @@
 package sort;
 
 /**
+ * 可以做到稳定
  * 归并排序：将数组分为2个一组，相邻数组互相比较之后再合并。
  */
 public class MergeSort extends Sort {

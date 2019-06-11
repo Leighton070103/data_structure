@@ -4,6 +4,7 @@ import static util.NumUtil.randomNum;
 import static util.NumUtil.swap;
 
 /**
+ * 不稳定算法
  * 快速排序：选取一个标准数，通过这个标准数将数组内的数分为大于标准数和小于标准数两部分。
  */
 public class QuickSort extends Sort {

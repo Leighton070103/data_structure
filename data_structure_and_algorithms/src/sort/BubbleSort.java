@@ -3,7 +3,7 @@ package sort;
 import static util.NumUtil.swap;
 
 /**
- * 冒泡排序
+ * 冒泡排序：可以通过改变是否在值相同时交换变成稳定的排序算法。
  */
 public class BubbleSort extends Sort {
 

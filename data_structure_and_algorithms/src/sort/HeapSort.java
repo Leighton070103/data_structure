@@ -4,6 +4,10 @@ import datastructure.MaxHeap;
 
 import static util.NumUtil.swap;
 
+/**
+ * 堆排序
+ * 不稳定排序
+ */
 public class HeapSort extends Sort {
     public HeapSort(int[] arr) {
         super(arr);
