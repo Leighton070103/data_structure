@@ -1,4 +1,4 @@
-package problem.matrix;
+package problem.course.matrix;
 
 import java.util.Scanner;
 

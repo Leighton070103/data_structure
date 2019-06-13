@@ -1,4 +1,4 @@
-package problem.matrix;
+package problem.course.matrix;
 
 import java.util.Scanner;
 
@@ -20,8 +20,11 @@ public class PrintMatrix {
         printMatrix(matrix);
         PrintMatrix printMatrix = new PrintMatrix(matrix);
         System.out.println("Printing...");
-//        printMatrix.clockWisePrint();
-        printMatrix.zigTagPrint();
+        printMatrix.clockWisePrint();
+        ClockWisePrint c = new ClockWisePrint();
+        System.out.println();
+        c.print(matrix);
+        //printMatrix.zigTagPrint();
     }
 
     int[][] matrix;
