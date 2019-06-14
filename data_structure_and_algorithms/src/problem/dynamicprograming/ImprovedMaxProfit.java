@@ -1,7 +1,11 @@
 package problem.dynamicprograming;
 
-import static java.lang.Math.max;
-import static java.lang.Math.min;
+import datastructure.LinkedList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static java.lang.Math.*;
 
 
 /**
@@ -19,6 +23,46 @@ public class ImprovedMaxProfit {
         System.out.println(m.maxProfit(2, new int[]{3, 2, 6, 5, 0, 3}));
     }
 
+
+        public int maxProfit(int k, int[] prices) {
+        if (prices.length < 2 || k==0) return 0;
+        List<Integer> points = new ArrayList<>();
+        points.add(prices[0]);
+        int m = 1;
+        while (m<prices.length-1){
+            if(prices[m] < prices[m+1]){
+                points.add(prices[m]);
+                while (m+1<prices.length && prices[m] < prices[m+1]) m++;
+            }else if(prices[m] > prices[m+1]){
+                points.add(prices[m]);
+                while (m+1<prices.length && prices[m] > prices[m+1]) m++;
+            }else m++;
+        }
+        points.add(prices[prices.length-1]);
+        if(points.size() == 2) return Math.max(0, points.get(points.size()-1) - points.get(0));
+
+        k = min(points.size()/2 +1, k);
+
+        int[] costs = new int[k];
+
+        int[] trans = new int[k];
+        for (int i =0; i<k; i++){
+            costs[i] = Integer.MIN_VALUE;
+            trans[i] = Integer.MIN_VALUE;
+        }
+        costs[0] = -points.get(0);
+
+        for(int j = 0; j<points.size(); j++){
+            int price = points.get(j);
+            costs[0] = max(costs[0], -price);
+            trans[0] = max(trans[0], price + costs[0]);
+            for (int i=1; i<k; i++){
+                costs[i] = max(costs[i], trans[i-1] - price);
+                trans[i] = max(trans[i], price + costs[i]);
+            }
+        }
+        return max(0, trans[trans.length-1]);
+    }
     //    public int maxProfit(int k, int[] prices) {
 //        if (prices.length < 1) return 0;
 //        k = min(prices.length/2 +1, k);
@@ -43,34 +87,44 @@ public class ImprovedMaxProfit {
 //        }
 //        return max(0, trans[trans.length-1]);
 //    }
-    public int maxProfit(int k, int[] prices) {
-        if (prices.length < 1 || k==0) return 0;
-        k = min((prices.length + 1) / 2, k);
-
-        int[] costs = new int[k];
-
-        int[] trans = new int[k];
-        for (int i = 0; i < k; i++) {
-            costs[i] = Integer.MIN_VALUE;
-            trans[i] = Integer.MIN_VALUE;
-        }
-        costs[0] = -prices[0];
-
-        for (int j = 0; j < prices.length; j++) {
-            int price = prices[j];
-            costs[0] = max(costs[0], -price);
-            trans[0] = max(trans[0], price + costs[0]);
-            for (int i = 1; i < k; i++) {
-                if (2*i > j) {
-                    costs[i] = costs[i-1];
-                    trans[i] = trans[i-1];
-
-                } else {
-                    costs[i] = max(costs[i], trans[i - 1] - price);
-                    trans[i] = max(trans[i], price + costs[i]);
-                }
-            }
-        }
-        return max(0, trans[trans.length - 1]);
-    }
+//    public int maxProfit(int k, int[] prices) {
+//        if (prices.length < 1 || k==0) return 0;
+//        k = min((prices.length + 1) / 2, k);
+//         ArrayList<Integer> costs = new ArrayList<>();
+//         ArrayList<Integer> trans = new ArrayList<>();
+//
+//       costs.add(-prices[0]);
+//       trans.add(0);
+//
+//        for (int j = 0; j < prices.length; j++) {
+//            int price = prices[j];
+//            int cost = costs.get(0);
+//            int tran = trans.get(0);
+//            cost = max(cost, -price);
+//            tran = max(tran, price + cost);
+//            costs.set(0, cost);
+//            trans.set(0, tran);
+//
+//            int limit = min((j+1)/2 + 1, k) ;
+//
+//            for (int i = 1; i < limit; i++) {
+//                int prevTrans = trans.get(i-1);
+//                if (i >= costs.size() ) {
+//                   cost = max(Integer.MIN_VALUE, prevTrans - price);
+//                   tran = max(Integer.MIN_VALUE, price + cost);
+//                   costs.add(cost);
+//                   trans.add(tran);
+//
+//                } else {
+//                    cost = costs.get(i);
+//                    tran = trans.get(i);
+//                    cost= max(cost, prevTrans - price);
+//                    tran = max(tran, price + cost);
+//                    costs.set(i, cost);
+//                    trans.set(i, tran);
+//                }
+//            }
+//        }
+//        return max(0, trans.get(trans.size()-1));
+//    }
 }

@@ -105,7 +105,7 @@ public class MaxProfit {
         int s3 = Integer.MIN_VALUE;
         int s4 = Integer.MIN_VALUE;
         for (int i = 1; i < prices.length; ++i) {
-            s1 = max(s1, -prices[i]); //截止至第i天进行一笔交易的最低成本
+            s1 = max(s1, - prices[i]); //截止至第i天进行一笔交易的最低成本
             s2 = max(s2, s1 + prices[i]); //截止至第i天进行一笔交易的最高收益
             s3 = max(s3, s2 - prices[i]); //在进行了一笔最高收益的前提下，进行第二次买入后的最高金额
             s4 = max(s4, s3 + prices[i]); //在进行了一笔最高收益的前提下，进行第二次买入后卖出的最高金额
