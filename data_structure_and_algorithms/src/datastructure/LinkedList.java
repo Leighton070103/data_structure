@@ -8,6 +8,11 @@ public class LinkedList<T> {
         this.value = value;
         next = null;
     }
+
+    public LinkedList() {
+
+    }
+
     public LinkedList<T> getNext(){
         return next;
     }
