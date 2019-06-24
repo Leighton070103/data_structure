@@ -66,7 +66,7 @@ class SpNode {
 public class CopyListWithRandom {
 
     public static void main(String[] args){
-        SpNode sp = SpNode.getInstance(randomArr(10, 14));
+        SpNode sp = SpNode.getInstance(randomArr(10, 9));
         SpNode.print(sp);
         CopyListWithRandom c = new CopyListWithRandom();
         System.out.println("result: ");
@@ -84,13 +84,19 @@ public class CopyListWithRandom {
         }
         cur = node;
         cp = cur.next;
-        SpNode tCur = cp;
+        SpNode tCur;
         while (cur != null){
             SpNode tNext = cur.next.next;
-            tCur.next = tNext == null? null: tNext.next;
-            tCur.rand = cur.rand;
+            tCur = cur.next;
+            tCur.rand = cur.rand == null? null : cur.rand.next;
+            cur = tNext;
+        }
+        cur = node;
+        while (cur != null){
+            SpNode tNext = cur.next.next;
+            tCur = cur.next;
             cur.next = tNext;
-            tCur = tCur.next;
+            tCur.next = tNext == null? null:tNext.next;
             cur = tNext;
         }
         return cp;
