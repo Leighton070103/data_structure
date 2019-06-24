@@ -25,10 +25,44 @@ public class Node {
             printNum(cur.val);
             cur = cur.next;
         }
+        System.out.println();
     }
 
     public int getVal() {
         return val;
+    }
+
+    @Override
+    public String toString() {
+        return val + ", ";
+    }
+
+
+    public static Node toNode(Node[] nodes){
+        Node res = nodes[0];
+        Node node = nodes[0];
+        for (int i = 1; i<nodes.length; i++){
+            node.next = nodes[i];
+            node = node.next;
+        }
+        node.next = null;
+        return res;
+    }
+
+    public static Node[] toArray(Node node){
+        int i=1;
+        Node cur = node.getNext();
+        while (cur != null){
+            i++;
+            cur = cur.getNext();
+        }
+        Node n = node;
+        Node[] nodes = new Node[i];
+        for (int j=0; j<i; j++){
+            nodes[j] = n;
+            n = n.getNext();
+        }
+        return nodes;
     }
 
     public void setVal(int val) {

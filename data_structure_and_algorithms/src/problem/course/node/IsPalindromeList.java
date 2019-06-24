@@ -57,7 +57,7 @@ public class IsPalindromeList {
     }
 
     /**
-     * 技术个时来到重点位置，偶数位时来到中点前一位
+     * 奇数个时来到中点位置，偶数位时来到中点前一位
      * @param node
      * @return
      */
