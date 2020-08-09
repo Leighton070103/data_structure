@@ -1,4 +1,4 @@
-package problem.leetcoderegular;
+package problem.twopointers;
 
 import java.util.HashMap;
 import java.util.Map;
